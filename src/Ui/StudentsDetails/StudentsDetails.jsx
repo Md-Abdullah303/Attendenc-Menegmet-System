@@ -26,9 +26,9 @@ const StudentsDetails = () => {
   // console.log(studentsData, id);
   //   console.log(expectedStudents, "expected data");
   return (
-    <div className="w-[90%] sm:w-[70%] flex items-start gap-5 mx-auto py-25">
+    <div className="w-[90%] sm:w-[70%] flex items-center sm:items-start flex-col md:flex-row gap-5 mx-auto py-25">
       {/* left side */}
-      <div className="w-[29%] space-y-3">
+      <div className="w-full md:w-[29%] space-y-3">
         <div className="bg-base-200 border border-gray-200 py-8 px-4 flex items-center justify-center  rounded-lg">
           <div className="text-center">
             <div className="w-30 rounded-full overflow-hidden border border-gray-200">
