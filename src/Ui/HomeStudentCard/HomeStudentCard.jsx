@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 
 
@@ -20,7 +21,7 @@ const HomeStudentCard = ({ student }) => {
           <p className="text-lg">Reg No. : {student.registrationNumber}</p>
           <p className="text-lg">Address : {student.address}</p>
           <div className="card-actions items-center justify-between">
-            <button className="btn btn-ghost border border-purple-500 primary-t-color">Show Details</button>
+            <Link to={`/student/${student.id}`}><button className="btn btn-ghost border border-purple-500 primary-t-color">Show Details</button></Link>
             <div className=" space-x-3">
               {student.gunaboli.map((guna, ind) => (
                 <div key={ind} className="badge badge-secondary badge-outline">
