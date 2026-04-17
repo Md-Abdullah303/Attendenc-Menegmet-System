@@ -15,7 +15,7 @@ const HeroTopStudents = () => {
         <MdOutlineAirlineStops /> Our Top Students
       </h1>
 
-      <Suspense fallback={<p>loding.....</p>}>
+      <Suspense fallback={<ClockLoader />}>
         <HomeStudentsContainer studentsData={studentsData}></HomeStudentsContainer>
       </Suspense>
     </div>
