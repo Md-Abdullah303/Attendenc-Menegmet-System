@@ -5,10 +5,10 @@ const HeroBanner = () => {
   return (
     <div>
       <div className="hero bg-base-200 h-[90vh]">
-        <div className="hero-content w-[90%] container flex-col lg:flex-row-reverse">
+        <div className="hero-content w-[90%] px-6 container flex-col lg:flex-row-reverse">
           <img
             src={HeroBannerImg}
-            className=" rounded-lg w-200 shadow-lg"
+            className=" rounded-lg w-100 sm:w-150  shadow-lg"
           />
           <div className="">
             <h1 className="text-5xl font-bold">Chandpur Polytechnic Institute</h1>

@@ -13,10 +13,12 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage></HomePage>,
+        loader: ()=> fetch("/data.json")
       },
       {
         path: "/students",
         element: <StudentsPage></StudentsPage>,
+        loader: ()=> fetch("/data.json")
       },
       {
         path: '/timeline',
