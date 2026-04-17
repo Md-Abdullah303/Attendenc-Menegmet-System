@@ -2,6 +2,7 @@ import React from "react";
 import { FcOk } from "react-icons/fc";
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router";
+import { toast } from "react-toastify";
 
 /***
  * address:"Khulna, Bangladesh"
@@ -18,6 +19,18 @@ tag:"science"
  */
 
 const StudentPageCardContainer = ({ studentsData }) => {
+  const handleToast = () => {
+    toast.info(`You are in,`, {
+      position: "top-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
   return (
     <div className="space-y-3.5">
       {studentsData.map((student) => (
@@ -44,7 +57,7 @@ const StudentPageCardContainer = ({ studentsData }) => {
             <button className="btn text-sm sm:text-lg btn-success text-white border-none">
               Present
             </button>
-            <Link to={`/student/${student.id}`}><button className="btn btn-info btn-outline text-sm sm:text-lg hover:text-white">
+            <Link onClick={handleToast} to={`/student/${student.id}`}><button className="btn btn-info btn-outline text-sm sm:text-lg hover:text-white">
                Details
             </button></Link>
             <button className="btn btn-ghost bg-red-400 text-white text-xl rounded-full p-1 h-10 w-10">

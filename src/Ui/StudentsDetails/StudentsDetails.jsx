@@ -23,6 +23,8 @@ const StudentsDetails = () => {
     (student) => student.id === Number(id),
   );
 
+  
+
   // console.log(studentsData, id);
   //   console.log(expectedStudents, "expected data");
   return (
