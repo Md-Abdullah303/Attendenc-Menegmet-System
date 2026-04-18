@@ -12,7 +12,7 @@ const TimelinePage = () => {
   const handleDeleted = (dltStudent)=>{
     const newFilterStudents = timelineData.filter(data=> data.id !== dltStudent.id);
     setTimelineData(newFilterStudents);
-    toast.error(`${dltStudent.name} was present`)
+    toast.error(`${dltStudent.name} was Absent `)
   }
   return (
     <div className="w-[90%] sm:container space-y-3.5  mx-auto pt-20 pb-10">
