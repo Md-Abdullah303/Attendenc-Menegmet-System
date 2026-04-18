@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { StudentDataContext } from "../../context/StudentDataProvider/StudentDataContext";
+import { toast } from "react-toastify";
 
 /***
  * address:"Dhaka, Bangladesh"
@@ -18,12 +20,21 @@ tag:"science"
 const StudentsDetails = () => {
   const { id } = useParams();
   const studentsData = useLoaderData();
+  const {timelineData, setTimelineData} = useContext(StudentDataContext)
 
   const expectedStudents = studentsData.find(
     (student) => student.id === Number(id),
   );
 
-  
+  const handlePresent = (passStudent)=>{
+    const isExist = timelineData.find(data=> data.id == passStudent.id);
+    if(isExist){
+      toast.error("This student already present..")
+    }else if(!isExist){
+      setTimelineData([...timelineData, passStudent]);
+      toast.success(`${passStudent.name} was Present`);
+    }
+  }
 
   // console.log(studentsData, id);
   //   console.log(expectedStudents, "expected data");
@@ -43,9 +54,9 @@ const StudentsDetails = () => {
           </div>
         </div>
         <div className="flex flex-col w-full items-center gap-2.5 rounded-lg">
-          <button className="btn btn-success btn-outline w-full text-xl hover:text-white">Present</button>
-          <div className="w-full text-xl font-semibold btn btn-info text-white">Call him</div>
-          <div className="bg-red-400 text-white border border-gray-200 py-3 w-full text-center rounded-sm text-xl font-semibold">Delete</div>
+          <button onClick={()=> handlePresent(expectedStudents)} className="btn btn-success btn-outline w-full text-xl hover:text-white">Present</button>
+          <div onClick={()=> toast.success(`calling ${expectedStudents.name}`)} className="w-full text-xl font-semibold btn btn-info text-white">Call him</div>
+          <div onClick={()=> toast.info(`Sorry! You can't Delete right now..`)} className="bg-red-400 text-white border border-gray-200 py-3 w-full text-center rounded-sm text-xl font-semibold">Delete</div>
         </div>
       </div>
       {/* right side */}
