@@ -83,7 +83,7 @@ const StudentPageCardContainer = ({ studentsData }) => {
                     <h1>{student.name}</h1>
                     <h2>CST | 5th {student.shift}</h2>
                   </div>
-                  <div className="sm:border-l border-t md:px-3 pt-2 border-gray-300">
+                  <div className="sm:border-l md:px-3 pt-2 border-gray-300">
                     <p>Roll : {student.roll}</p>
                     <p>Reg No. : {student.registrationNumber}</p>
                   </div>

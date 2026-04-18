@@ -1,16 +1,36 @@
-# React + Vite
+### Project Name : Attendence Menegment System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Short Discription :
+You can interactive with this website with any device. This website only made for Teacher's. In future i will make it for student and teacher's also for more people
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tools ⚒️
+# For: Design
+- Tailwindcss
+- DaisyUi
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# For: Future
+- React
+- JavaScript (ES6)
+- React Routing
 
-## Expanding the ESLint configuration
+# Side tools
+- React Spinner
+- React Toastify
+- React Icon's
+- React Recharts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Top Feature
+1. Responsive for Mobile, tablet and PC/Computer
+2. Easy to saw Student's Data
+3. Easy to use work=> present, watch details and remove that from data
+4. Sow a Deshboard and easy to how much student's are absent 
+
+--- 
+
+## live link: https://attendenc-menegmet-system.vercel.app/timeline
