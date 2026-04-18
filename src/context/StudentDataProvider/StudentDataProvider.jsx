@@ -4,6 +4,7 @@ import { StudentDataContext } from "./StudentDataContext";
 const StudentDataProvider = ({ children }) => {
   const [spiner, setSpiner] = useState(true);
   const [studentsData, setStudentsData] = useState([]);
+  const [timelineData, setTimelineData] = useState([]);
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -21,6 +22,8 @@ const StudentDataProvider = ({ children }) => {
     spiner,
     studentsData,
     setStudentsData,
+    setTimelineData,
+    timelineData,
   };
   return (
     <StudentDataContext.Provider value={data}>
