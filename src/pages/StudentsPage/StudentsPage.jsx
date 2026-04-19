@@ -11,7 +11,7 @@ const StudentsPage = () => {
         <h1 className="text-xl sm:text-3xl md:text-4xl font-bold italic text-green-950">
           Our Students
         </h1>
-        <div className="">
+        <div className="flex">
           <input
             className="bg-gray-200 py-2 px-4 mx-3 w-30 sm:w-[15vw] text-lg outline-none rounded-lg"
             type="text"
