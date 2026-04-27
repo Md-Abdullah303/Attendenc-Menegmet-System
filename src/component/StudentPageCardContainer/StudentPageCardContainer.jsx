@@ -20,7 +20,8 @@ shift:"2nd"
 tag:"science"
  */
 
-const StudentPageCardContainer = ({ studentsData }) => {
+const StudentPageCardContainer = ({ studentsData, searchInp }) => {
+  // const SInput = searchInp.trim("");
   const {
     setStudentsData,
     studentsData: mainStudentsData,
@@ -60,6 +61,13 @@ const StudentPageCardContainer = ({ studentsData }) => {
     setStudentsData(newFilterStudents);
     toast.error(`Delete ${dltStudent.name} from institute..`);
   };
+
+  if(!searchInp.length == 0){
+    console.log('SInput');
+    const needStudents = mainStudentsData.filter(Stu=> Stu.roll == searchInp);
+    // console.log(needStudents);
+    // setStudentsData(needStudents)
+  }
 
   return (
     <div className="space-y-3.5">

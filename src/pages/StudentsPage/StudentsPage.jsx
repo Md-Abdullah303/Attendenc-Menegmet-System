@@ -1,10 +1,12 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { useLoaderData } from "react-router";
 import StudentPageCardContainer from "../../component/StudentPageCardContainer/StudentPageCardContainer";
 import { ClockLoader } from "react-spinners";
 
 const StudentsPage = () => {
+  const [searchInp , setSearchInp] = useState('')
   const studentsData = useLoaderData();
+  // console.log(searchInp);
   return (
     <div className="w-[90%] sm:container space-y-3.5  mx-auto pt-20 pb-10">
       <div className="flex items-center justify-between gap-5">
@@ -13,6 +15,8 @@ const StudentsPage = () => {
         </h1>
         <div className="flex">
           <input
+          value={searchInp}
+          onChange={(e)=> setSearchInp(e.target.value)}
             className="bg-gray-200 py-2 px-4 mx-3 w-30 sm:w-[15vw] text-lg outline-none rounded-lg"
             type="text"
             placeholder="Search"
@@ -23,6 +27,7 @@ const StudentsPage = () => {
 
       <Suspense fallback={<ClockLoader />}>
         <StudentPageCardContainer
+        searchInp={searchInp}
           studentsData={studentsData}
         ></StudentPageCardContainer>
       </Suspense>
