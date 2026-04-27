@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
+import userImg from '../../assets/user-imag.png'
 
 const HomeStudentCard = ({ student }) => {
   const handleToast = () => {
@@ -19,10 +20,10 @@ const HomeStudentCard = ({ student }) => {
   return (
     <div className="border border-gray-300 rounded-xl ">
       <div className="card bg-base-100 shadow-sm">
-        <figure className="w-full h-60 object-cover object-center">
+        <figure className=" p-3 object-cover object-center">
           <img
-            className="w-full  object-cover rounded-lg"
-            src={student.img}
+            className="w-30 shadow-sm  object-cover rounded-lg"
+            src={userImg}
             alt={student.name}
           />
         </figure>

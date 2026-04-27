@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { toast } from "react-toastify";
 import { StudentDataContext } from "../../context/StudentDataProvider/StudentDataContext";
 import StudentsNotFound from "../StudentsNotFound/StudentsNotFound";
+import userImg from '../../assets/user-imag.png'
 
 /***
  * address:"Khulna, Bangladesh"
@@ -83,7 +84,7 @@ const StudentPageCardContainer = ({ studentsData, searchInp, setFilterStudentsDa
                 <div className="h-10 sm:h-12 w-10 sm:w-12 rounded-full overflow-hidden border border-gray-300 object-center">
                   <img
                     className="w-full object-center"
-                    src={student.img}
+                    src={userImg}
                     alt={student.name}
                   />
                 </div>

@@ -4,6 +4,7 @@ import StudentsNotFound from "../../component/StudentsNotFound/StudentsNotFound"
 import { Link } from "react-router";
 import { MdDeleteForever } from "react-icons/md";
 import { toast } from "react-toastify";
+import userImg from '../../assets/user-imag.png'
 
 const TimelinePage = () => {
   const { timelineData, setTimelineData } = useContext(StudentDataContext);
@@ -39,7 +40,7 @@ const TimelinePage = () => {
                   <div className="h-10 sm:h-12 w-10 sm:w-12 rounded-full overflow-hidden border border-gray-300 object-center">
                     <img
                       className="w-full object-center"
-                      src={item.img}
+                      src={userImg}
                       alt={item.name}
                     />
                   </div>

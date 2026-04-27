@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { StudentDataContext } from "../../context/StudentDataProvider/StudentDataContext";
 import { toast } from "react-toastify";
+import uesrImg from '../../assets/user-imag.png'
 
 /***
  * address:"Dhaka, Bangladesh"
@@ -45,7 +46,7 @@ const StudentsDetails = () => {
         <div className="bg-base-200 border border-gray-200 py-8 px-4 flex items-center justify-center  rounded-lg">
           <div className="text-center">
             <div className="w-30 rounded-full overflow-hidden border border-gray-200">
-              <img src={expectedStudents.img} alt={expectedStudents.name} />
+              <img src={uesrImg} alt={expectedStudents.name} />
             </div>
             <div className="mt-3 space-y-2">
               <p className="badge badge-info text-white ">{expectedStudents.tag}</p>
