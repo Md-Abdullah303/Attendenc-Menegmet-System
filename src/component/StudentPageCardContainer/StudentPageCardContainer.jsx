@@ -20,7 +20,7 @@ shift:"2nd"
 tag:"science"
  */
 
-const StudentPageCardContainer = ({ studentsData, searchInp }) => {
+const StudentPageCardContainer = ({ studentsData, searchInp, setFilterStudentsData }) => {
   // const SInput = searchInp.trim("");
   const {
     setStudentsData,
@@ -55,25 +55,26 @@ const StudentPageCardContainer = ({ studentsData, searchInp }) => {
   };
 
   const handleDeleted = (dltStudent) => {
-    const newFilterStudents = mainStudentsData.filter(
+    const newFilterStudents = studentsData.filter(
       (student) => student.id !== dltStudent.id,
     );
-    setStudentsData(newFilterStudents);
+    setFilterStudentsData(newFilterStudents);
     toast.error(`Delete ${dltStudent.name} from institute..`);
   };
 
-  if(!searchInp.length == 0){
-    console.log('SInput');
-    const needStudents = mainStudentsData.filter(Stu=> Stu.roll == searchInp);
-    // console.log(needStudents);
-    // setStudentsData(needStudents)
-  }
+  // if(!searchInp.length == 0){
+  //   console.log('SInput');
+  //   const needStudents = mainStudentsData.filter(Stu=> Stu.roll == searchInp);
+  //   // console.log(needStudents);
+  //   // setStudentsData(needStudents)
+  // }
+  // console.log(searchInp);
 
   return (
     <div className="space-y-3.5">
-      {mainStudentsData.length === 0
+      {studentsData.length === 0
         ? <StudentsNotFound></StudentsNotFound>
-        : mainStudentsData.map((student) => (
+        : studentsData.map((student) => (
             <div
               key={student.id}
               className="border shadow-sm bg-base-200 border-gray-300 p-5 rounded-lg flex items-center justify-between gap-3"

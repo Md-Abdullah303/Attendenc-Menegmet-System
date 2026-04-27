@@ -5,8 +5,22 @@ import { ClockLoader } from "react-spinners";
 
 const StudentsPage = () => {
   const [searchInp , setSearchInp] = useState('')
+  const [filterStudentsData, setFilterStudentsData] = useState([])
   const studentsData = useLoaderData();
-  // console.log(searchInp);
+
+
+  const handleSubmit = (givenRoll)=>{
+    if(!givenRoll){
+      setFilterStudentsData([])
+      return;
+    }
+
+    const expectedData = studentsData.filter(student => student.roll.toString().includes(givenRoll))
+    // console.log(expectedData);
+    setFilterStudentsData(expectedData)
+  }
+
+  // console.log(studentsData);
   return (
     <div className="w-[90%] sm:container space-y-3.5  mx-auto pt-20 pb-10">
       <div className="flex items-center justify-between gap-5">
@@ -19,16 +33,17 @@ const StudentsPage = () => {
           onChange={(e)=> setSearchInp(e.target.value)}
             className="bg-gray-200 py-2 px-4 mx-3 w-30 sm:w-[15vw] text-lg outline-none rounded-lg"
             type="text"
-            placeholder="Search"
+            placeholder="Enter Roll"
           />
-          <button className="btn btn-primary">Search</button>
+          <button onClick={()=> handleSubmit(searchInp)} className="btn btn-primary">Search</button>
         </div>
       </div>
 
       <Suspense fallback={<ClockLoader />}>
         <StudentPageCardContainer
         searchInp={searchInp}
-          studentsData={studentsData}
+          studentsData={filterStudentsData.length > 0 ? filterStudentsData : studentsData}
+          setFilterStudentsData={setFilterStudentsData}
         ></StudentPageCardContainer>
       </Suspense>
     </div>
