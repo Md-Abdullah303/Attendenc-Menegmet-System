@@ -5,6 +5,7 @@ import StudentsPage from "../pages/StudentsPage/StudentsPage";
 import TimelinePage from "../pages/TimelinePage/TimelinePage";
 import Deshboard from "../pages/Deshboard/Deshboard";
 import StudentsDetails from "../Ui/StudentsDetails/StudentsDetails";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,6 @@ export const router = createBrowserRouter([
         loader: ()=> fetch('/data.json')
       },
     ],
-    errorElement: "404 page not fund",
+    errorElement: <PageNotFound></PageNotFound>,
   },
 ]);
